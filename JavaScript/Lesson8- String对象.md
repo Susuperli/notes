@@ -37,7 +37,7 @@ length属性。
   document.write("The third character is: " + str.charAt(20))
   ````
 
-  ![image-20201213205517785](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201213205517785.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/f2b61iKGLJ.png?imageslim)
 
   **注释：**字符串中第一个字符的下标是 0。如果参数 index 不在 0 与 string.length 之间，该方法将返回一个空字符串。
 
@@ -78,7 +78,7 @@ length属性。
   document.write(str.indexOf("world"))
   `````
 
-  ![image-20201213211842873](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201213211842873.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/kfc88lH0IK.png?imageslim)
 
 - lastIndexOf(检索值[,开始检索值]);从后面检索。
 
@@ -93,7 +93,7 @@ length属性。
   document.write(str.lastIndexOf("world"))
   ````
 
-  ![image-20201213212416197](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201213212416197.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/mmH81GBfJl.png?imageslim)
 
 - slice(start,end)
 
@@ -110,7 +110,7 @@ length属性。
   document.write(str.slice(6,11))
   ````
 
-  ![image-20201213215428020](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201213215428020.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/6Lgb3Jm9ic.png?imageslim)
 
 - substr(start,length);截取字符串。
 
@@ -131,7 +131,7 @@ length属性。
   document.write(str.substr(3))
   ````
 
-  ![image-20201213221025859](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201213221025859.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/58gL288gc0.png?imageslim)
 
 - substring(start,stop)
 
@@ -151,7 +151,7 @@ length属性。
   document.write(str.slice(3))
   ````
 
-  ![image-20201213221913672](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201213221913672.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/dLh5lAEebh.png?imageslim)
 
 - split()
 
@@ -171,7 +171,7 @@ length属性。
   document.write(str.split(" ",3))//空格处分割，且超过三个字母的字符串不予显示。
   ````
 
-  ![image-20201213223058679](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201213223058679.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/DEjg87L8m5.png?imageslim)
 
   - 老师给的小例子
 

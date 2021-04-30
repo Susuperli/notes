@@ -69,7 +69,7 @@ x,y为圆心；r为半径；startAngle,endAngle其中角度的表示方法为弧
 
 ## 绘制贝塞尔曲线
 
-![贝塞尔曲线](D:\0-Link\naotes\JavaScript-senior\picture\贝塞尔曲线.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/eeH44DeDif.png?imageslim)
 
 ## 绘制文本
 
@@ -79,11 +79,11 @@ ctx.lineCap=type;
 
 - butt：线段末端以方形结束。
 - round：线段末端以圆形结束。
-- square：线段末端以方形结束，但是增加了一个宽度和线段相同，高度是线段厚度一半的矩形区域。![线段末端](D:\0-Link\naotes\JavaScript-senior\picture\线段末端.png)
+- square：线段末端以方形结束，但是增加了一个宽度和线段相同，高度是线段厚度一半的矩形区域。![mark](http://qiniu.cloud-zhi.com/blog/210430/Df6mD8eej3.png?imageslim)
 
-![虚线](D:\0-Link\naotes\JavaScript-senior\picture\虚线.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/Fc9F7gf1A9.png?imageslim)
 
-![绘制文本](D:\0-Link\naotes\JavaScript-senior\picture\绘制文本.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/hG7cL58EiI.png?imageslim)
 
 ## 绘制图片
 

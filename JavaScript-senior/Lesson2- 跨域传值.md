@@ -89,7 +89,7 @@ User-Agent:Mozilla/5.0...
 
 ### window.name+iframe
 
-![window.name+iframe](D:\0-Link\naotes\JavaScript-senior\picture\window.name+iframe.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/0kh56j34Jg.png?imageslim)
 
 ### postMessage() (html5 API)
 

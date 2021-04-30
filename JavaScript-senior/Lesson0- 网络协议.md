@@ -10,7 +10,7 @@
 
 **TCP/IP(Transmission Control Protocol/Internet Protocol）**传输控制协议/网间网协议)是目前世界上应用最为广泛的协议，**包含了一系列构成互联网基础的网络协议**，它的流行与Internet的迅猛发展密切相关—TCP/IP最初是为互联网的原型ARPANET所设计的，目的是提供一整套方便实用、能应用于多种网络上的协议，事实证明TCP/IP做到了这一点，它使网络互联变得容易起来，并且使越来越多的网络加入其中，成为Internet的事实标准。
 
-![TCPIP](D:\0-Link\naotes\picture\TCPIP.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/662dcaa7k0.png?imageslim)
 
 * **应用层**—应用层是所有用户所面向的应用程序的统称。ICP/IP协议族在这一层面有着很多协议来支持不同的应用，许多大家所熟悉的基于Internet的应用的实现就离不开这些协议。如我们进行万维网（WWW）访问用到了HTTP协议、文件传输用FTP协议、电子邮件发送用SMTP、域名的解析用DNS协议、 远程登录用Telnet协议等等，都是属于TCP/IP应用层的；就用户而言，看到的是由一个个软件所构筑的大多为图形化的操作界面，而实际后台运行的便是上述协议。
 * **传输层**—这一层的的功能主要是提供应用程序间的通信，TCP/IP协议族在这一层的协议有TCP和UDP。
@@ -31,7 +31,7 @@ HTTP协议工作于客户端-服务端架构为上。浏览器作为HTTP客户�
 
 ### 工作原理
 
-![HTTP工作原理](D:\0-Link\naotes\picture\HTTP工作原理.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/m9087I52fC.png?imageslim)
 
 ###### 1、客户端连接到Web服务器
 
@@ -68,7 +68,7 @@ Web服务器解析请求，定位请求资源。服务器将资源复本写到TC
 
 ### 链接(三次握手)
 
-![三次握手](D:\0-Link\naotes\picture\三次握手.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/KJJILhHdLd.png?imageslim)
 
 1. 客户端主动打开连接，向服务器发送请求连接的信号，此时等待服务器的确认
 2. 服务器被动打开连接，对服务器进行确认，向服务器发送表示接收到服务器发来的信号，并进入接收状态
@@ -76,7 +76,7 @@ Web服务器解析请求，定位请求资源。服务器将资源复本写到TC
 
 ### 断开(四次挥手)
 
-![四次挥手](D:\0-Link\naotes\picture\四次挥手.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/f75G6bcllE.png?imageslim)
 
 1、客户端向服务器发送一个主动关闭的信号
 
@@ -90,7 +90,7 @@ Web服务器解析请求，定位请求资源。服务器将资源复本写到TC
 
 #### 请求构成
 
-![http请求构成(1)](D:\0-Link\naotes\JavaScript-senior\picture\http请求构成(1).png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/8L6cL7HFK1.png?imageslim)
 
 1.请求行（包括请求方法get/post，请求地址，版本号）
 
@@ -102,7 +102,7 @@ Web服务器解析请求，定位请求资源。服务器将资源复本写到TC
 
 #### 响应构成
 
-![http响应构成](D:\0-Link\naotes\JavaScript-senior\picture\http响应构成.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/hL73caE9KG.png?imageslim)
 
 HTTP响应也由四个部分组成，分别是：状态行、消息报头、空行和响应正文。
 
@@ -205,4 +205,4 @@ HTTP状态码列表:
 
 　　3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。
 
-　　4、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。![https工作流程](D:\0-Link\naotes\JavaScript-senior\picture\https工作流程.png)
+　　4、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。![mark](http://qiniu.cloud-zhi.com/blog/210430/i7G9JIA8a2.png?imageslim)

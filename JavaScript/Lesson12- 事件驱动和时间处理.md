@@ -227,7 +227,7 @@
 
   限制输入的字符串长度
 
-  ![image-20201227115946231](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201227115946231.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/1If8I06A54.png?imageslim)
 
 - onkeypress按键盘
 

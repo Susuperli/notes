@@ -174,7 +174,7 @@ function 函数名(形参1,形参2,....){
   </html>
   ````
 
-  ![image-20201210102227278](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201210102227278.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/254A5Hmgla.png?imageslim)
 
 ## 系统（内置）函数
 

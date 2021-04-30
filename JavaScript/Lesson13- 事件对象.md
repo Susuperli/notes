@@ -164,7 +164,7 @@ IE的兼容写法cancelBubble=true;
 </html>
 ````
 
-![image-20201229143405123](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201229143405123.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/AFC574hc3j.png?imageslim)
 
 三层结构中，当到最里层时会依次弹出3,2,1，即执行为冒泡顺序。这里可以采用stopPropagation()的方法来阻止后面的冒泡
 
@@ -206,6 +206,6 @@ IE的兼容写法cancelBubble=true;
     }
 `````
 
-![image-20201229151817327](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201229151817327.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/g8G3jk6gdb.png?imageslim)
 
 点击到对应的地方才可以显示。

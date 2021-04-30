@@ -142,7 +142,7 @@ arr.length：数组的长度。
   document.write(arr);
   ````
 
-  ![image-20201211163459707](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201211163459707.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/glGbjA5mDG.png?imageslim)
 
 - 删除元素
 
@@ -183,7 +183,7 @@ arr.length：数组的长度。
      alert(newarr)
   `````
 
-  ![image-20201211165235838](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201211165235838.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/bC2LLG3i7k.png?imageslim)
 
   
 
@@ -231,7 +231,7 @@ arr.length：数组的长度。
   document.write(arr);
   ````
 
-  ![image-20201212212218863](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201212212218863.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/aLkJm7H1fE.png?imageslim)
 
   该方法需要新建新的数组来接受连接后的元素。**只是生成新的数组，不会改变原来的数组。**
 
@@ -256,7 +256,7 @@ arr.length：数组的长度。
   		document.write(typeof newarr);
   ````
 
-  ![image-20201212220315246](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201212220315246.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/8LKJLk391H.png?imageslim)
 
 - 字符连接
 
@@ -273,7 +273,7 @@ arr.length：数组的长度。
   document.write(arr.join("#"))
   ````
 
-  ![image-20201212221736309](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201212221736309.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/mfcEJkKLcm.png?imageslim)
 
 - 更新移动数据
 
@@ -307,7 +307,7 @@ arr.length：数组的长度。
 
     输出：
 
-    ![image-20201212223632771](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201212223632771.png)
+    ![mark](http://qiniu.cloud-zhi.com/blog/210430/ablhl6dGg5.png?imageslim)
 
     例子 2
 
@@ -333,7 +333,7 @@ arr.length：数组的长度。
 
     输出：
 
-    ![image-20201212223650925](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201212223650925.png)
+    ![mark](http://qiniu.cloud-zhi.com/blog/210430/d8206K2Ehb.png?imageslim)
 
     例子 3
 
@@ -359,7 +359,7 @@ arr.length：数组的长度。
 
     输出：
 
-    ![image-20201212223702693](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201212223702693.png)
+    ![mark](http://qiniu.cloud-zhi.com/blog/210430/9iIEbcIjc5.png?imageslim)
 
   - slice
 
@@ -415,7 +415,7 @@ arr.length：数组的长度。
 
     输出：
 
-    **![image-20201212225052183](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201212225052183.png)**
+    ![mark](http://qiniu.cloud-zhi.com/blog/210430/bajG689D36.png?imageslim)**
 
     例子 2
 
@@ -441,7 +441,7 @@ arr.length：数组的长度。
 
     输出：
 
-    ![image-20201212225109095](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201212225109095.png)
+    ![mark](http://qiniu.cloud-zhi.com/blog/210430/JGEmmhhC40.png?imageslim)
 
 - forEach();方法
 
@@ -495,7 +495,7 @@ arr.length：数组的长度。
   document.write(newarr)
   ````
 
-  ![image-20201213154447643](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201213154447643.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/5aCD20gEJE.png?imageslim)
 
 - filter();方法
 
@@ -519,7 +519,7 @@ arr.length：数组的长度。
   document.write(newarr);
   ````
 
-  ![image-20201213155653160](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201213155653160.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/He0bhEajgK.png?imageslim)
 
   和map方法的区别
 
@@ -531,7 +531,7 @@ arr.length：数组的长度。
   document.write(newarr);
   ````
 
-  ![image-20201213160632070](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201213160632070.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/7a4aH4GcJK.png?imageslim)
 
   返回值是布尔型。
 

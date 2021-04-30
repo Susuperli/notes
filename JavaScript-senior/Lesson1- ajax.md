@@ -14,7 +14,7 @@ Ajax还有一个最大的特点就是，当服务器响应时，不用刷新整�
 ### 同步和异步区别
 
 - 同步交互：客户端发出一个请求后，需要等待服务器响应结束后，才能发出第二个请求。
-- 异步交互：客户端发出一个请求后，无需等待服务器响应结束，就可以发出第二个请求。![同步异步区别](D:\0-Link\naotes\JavaScript-senior\picture\同步异步区别.png)
+- 异步交互：客户端发出一个请求后，无需等待服务器响应结束，就可以发出第二个请求。![mark](http://qiniu.cloud-zhi.com/blog/210430/CibIB3flfH.png?imageslim)
 
 ### Ajax所包含的技术
 
@@ -30,11 +30,11 @@ Ajax还有一个最大的特点就是，当服务器响应时，不用刷新整�
 
 ### Ajax工作原理
 
-![ajax工作原理](D:\0-Link\naotes\JavaScript-senior\picture\ajax工作原理.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/Fh8I1cC6A9.png?imageslim)
 
-![普通交互](D:\0-Link\naotes\JavaScript-senior\picture\普通交互.jpg)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/IJlIAD94J0.png?imageslim)
 
-![ajax交互](D:\0-Link\naotes\JavaScript-senior\picture\ajax交互.jpg)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/FdEdJJ96L7.png?imageslim)
 
 ## Ajax应用
 
@@ -137,7 +137,7 @@ var xmlHttp//兼容方法
 | send(*string*)               | 将请求发送到服务器。*string*                                 |
 | setRequestHeader()           | 设置请求头                                                   |
 
-![设置请求头](D:\0-Link\naotes\JavaScript-senior\picture\设置请求头.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/mA2mBCdEeD.png?imageslim)
 
 ````html
 <!DOCTYPE html>
@@ -257,7 +257,7 @@ WebSocket 使得客户端和服务器之间的数据交换变得更加简单，�
 
 HTML5 定义的 WebSocket 协议，能更好的节省服务器资源和带宽，并且能够更实时地进行通讯。
 
-![ws](D:\0-Link\naotes\JavaScript-senior\picture\ws.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/cFC26Gk1cH.png?imageslim)
 
 ### 使用场景
 
@@ -374,7 +374,7 @@ var json = {
 
  说明 ： json中的键 用双引号括起来 值可以是任意类型的数据 （ 严格的json值不会出现function (){...}  严格的json键用双引号括起来）
 
-![json语法规则](D:\0-Link\naotes\JavaScript-senior\picture\json语法规则.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/2b0efgLid1.png?imageslim)
 
 
 
@@ -390,7 +390,7 @@ JSON.stringify( ) 将对象（{ } [ ]）转为字符串
 
 ### 简介
 
-![formdata对象](D:\0-Link\naotes\JavaScript-senior\picture\formdata对象.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/a7hB4b7hAE.png?imageslim)
 
 ### 构造函数
 

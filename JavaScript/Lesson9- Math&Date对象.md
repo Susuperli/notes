@@ -60,7 +60,7 @@
 
 
 
-![image-20201214153003963](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201214153003963.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/lk2JdKfl5f.png?imageslim)
 
 ## Date对象
 
@@ -127,7 +127,7 @@ prototype属性
 </html>
 ````
 
-![image-20201214161720535](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201214161720535.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/253lk3IfCA.png?imageslim)
 
 #### 转换
 

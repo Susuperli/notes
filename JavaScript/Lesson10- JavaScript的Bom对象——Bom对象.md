@@ -105,7 +105,7 @@
   </script>
   ````
 
-  ![image-20201220114632095](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201220114632095.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/Eb43dJLDL1.png?imageslim)
 
 ### history对象
 
@@ -145,7 +145,7 @@ Location 对象是 **window 对象的一部分**，可通过 window.Location 属
   </script>
   ````
 
-  ![image-20201220150418417](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201220150418417.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/3k49aL7d7i.png?imageslim)
 
   这里面得到的是当前文档的完整的路径，其中中文部分浏览器自动转码。
 
@@ -202,7 +202,7 @@ Location 对象是 **window 对象的一部分**，可通过 window.Location 属
   </html>
   ````
 
-  ![image-20201220162345065](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201220162345065.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/7c7706bCaD.png?imageslim)
 
 ## 补充内容
 
@@ -238,4 +238,4 @@ Location 对象是 **window 对象的一部分**，可通过 window.Location 属
 
 ![image-20201220164354946](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201220164354946.png)
 
-![Windowsobject](D:\0-Link\naotes\picture\Windowsobject.gif)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/lEafjkb24L.gif)

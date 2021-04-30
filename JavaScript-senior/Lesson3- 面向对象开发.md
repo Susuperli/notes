@@ -158,7 +158,7 @@ var 对象名=new 函数名(实参1,实参2);
 
 参考博客：https://www.jianshu.com/p/eff5e130fc28
 
-我们创建的每个函数都会有prototype属性，这个属性是一个指针，指向该函数的原型对象对象，通过构造函数构造出来的对象都自动拥有构造函数的prototype指针指向的对象的属性和方法（共享的），**函数原型对象当中的所有方法和属性，都是不占用内存的**。并且prototype对象当中的**属性和方法都是可以修改**![原型函数](D:\0-Link\naotes\JavaScript-senior\picture\原型函数.png)
+我们创建的每个函数都会有prototype属性，这个属性是一个指针，指向该函数的原型对象对象，通过构造函数构造出来的对象都自动拥有构造函数的prototype指针指向的对象的属性和方法（共享的），**函数原型对象当中的所有方法和属性，都是不占用内存的**。并且prototype对象当中的**属性和方法都是可以修改**![mark](http://qiniu.cloud-zhi.com/blog/210430/5IkA0kKji8.png?imageslim)
 
 #### prototype和\_\_proto\_\_的区别
 

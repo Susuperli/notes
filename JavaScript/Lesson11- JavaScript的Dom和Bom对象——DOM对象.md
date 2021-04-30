@@ -10,7 +10,7 @@ DOM文档对象模型Document Object Model：当前载入页面所拥有的对�
 
 ## DOM树
 
-![u=4069710210,858097302&fm=26&gp=0](D:\0-Link\naotes\picture\u=4069710210,858097302&fm=26&gp=0.gif)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/GcCkFHK29G.png?imageslim)
 
 - 整个文档都是一个文档节点。
 - 每个HTML都是一个元素节点。
@@ -81,7 +81,7 @@ DOM文档对象模型Document Object Model：当前载入页面所拥有的对�
       list.style.height="78px";
   ````
 
-  ![image-20201222140822187](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201222140822187.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/9H73J1aD3J.png?imageslim)
 
   **注：该方法只是会匹配到第一个样式，即使有两个one类；要使用 .one类似css中的选择器。**
 
@@ -122,7 +122,7 @@ DOM文档对象模型Document Object Model：当前载入页面所拥有的对�
       console.log(i);
   ````
 
-  ![image-20201222143334689](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201222143334689.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/GIIKhl18hi.png?imageslim)
 
 - textContent
 
@@ -132,7 +132,7 @@ DOM文档对象模型Document Object Model：当前载入页面所拥有的对�
 
   获取或设置元素中**所有内容**，包括HTML代码
 
-  ![image-20201222143455388](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201222143455388.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/IecamDbCAI.png?imageslim)
 
   **注：主要区别和innerText的区别。**
 
@@ -234,7 +234,7 @@ var aaaa=document.createElement("div");
 
   点击文字便可以完成移动的操作。
 
-  ![image-20201223203620445](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201223203620445.png)![image-20201223203637880](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201223203637880.png)
+  ![mark](http://qiniu.cloud-zhi.com/blog/210430/clkjFmKJc7.png?imageslim)![mark](http://qiniu.cloud-zhi.com/blog/210430/bCJeijbdJL.png?imageslim)
 
   其实都可以理解为移动，区别是一个移动的是内存中的变量，看起来像是“添加”；另一个则是移动已有的变量。
 
@@ -320,13 +320,13 @@ var aaaa=document.createElement("div");
 </html>
 ````
 
-![image-20201223212537076](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201223212537076.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/CgGaj5Db2E.png?imageslim)
 
-![image-20201223212605555](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201223212605555.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/Lj9kd40FdJ.png?imageslim)
 
 false情况
 
-![image-20201223212639978](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201223212639978.png)
+![mark](http://qiniu.cloud-zhi.com/blog/210430/Ja4JI3AjmG.png?imageslim)
 
 ### 替换节点
 
@@ -492,9 +492,9 @@ false情况
     </html>
     ````
 
-    ![image-20201223224750452](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201223224750452.png)
+    ![mark](http://qiniu.cloud-zhi.com/blog/210430/10Jm4gicif.png?imageslim)
 
-    ![image-20201223224818503](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201223224818503.png)
+    ![mark](http://qiniu.cloud-zhi.com/blog/210430/mLcACDg39g.png?imageslim)
 
 ### 更改为兄弟节点
 
