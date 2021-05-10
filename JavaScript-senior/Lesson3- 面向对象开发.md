@@ -92,7 +92,7 @@ function 函数名(形参1,形参2){
 `````js
 Object.prototype.toString.call();
 obj  instanceof Array;   //检测是否为此种类型
-obj.constrcutor
+obj.constructor
 `````
 
 ### 构造函数模式
