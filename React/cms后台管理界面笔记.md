@@ -393,9 +393,235 @@ setState()在大多数情况下表现为“异步”，其实setState()的异步
 
 #### 数据的修改
 
+数据的修改和添加所使用的界面是基于antd的model弹框，当点击事件触发时就会利用state来控制弹框的显示进和隐藏。![mark](http://qiniu.cloud-zhi.com/blog/210511/0e5HG19gg3.png?imageslim)
+
+主要是利用form表单从获取值，并将信息传递给父组件。本例中利用的是antd中的form组件，antd4.x与3.x的改动较大，4.x版本获取表单信息的过程如下。
+
+​      通过ref属性绑定from表单，以此来获取form表单的信息，利用回调函数的写法，将获取的表单信息绑定在this实例身上。
+
+````js
+<Form
+       ref={form => this.from = form}
+       onValuesChange={this.changedata}
+  ></Form>
+````
+
+![mark](http://qiniu.cloud-zhi.com/blog/210511/62bkB9bE51.png?imageslim)
+
+能够得到一堆方法的对象，再通过getFieldsValue()方法，获取form表单的传值，再通过props将信息传入父组件即可。
+
+既是更新，在此之前都是要能够获取要修改的值，这里是通过双向绑定的方法，input的值从状态中获取，状态中值的首次渲染通过componentWillMount周期里面获取来自父组件的props值，来确定要添加的值。再之后就根据componentWillReceiveProps周期来获取来自父组件的更新值。
+
 #### 数据的添加
 
+数据的添加实际上也是获取子组件表单中的数据，使用的方法跟上面的方法相同，不再赘述。
+
 ### 商品管理
+
+商品管理的功能主要包括，商品的展示、商品的搜索、商品的状态管理、商品的添加以及修改。
+
+#### 商品的展示
+
+![mark](http://qiniu.cloud-zhi.com/blog/210511/fIl811GjIk.png?imageslim)
+
+在现有的前后台交互中，获取后台数据用用于展示大致分为两种，分页获取和全部获取。**全部获取数据**可以将数据放在状态中，如无变化阅读只是从状态中读取数据，一次获取；但是面对庞大的数据，**分页获取**可以减轻服务器的压力，但是每次翻页都会重新请求数据。其实这些功能都是后台完成的，我们做的就是向后台提交申请时，带上展示条数和展示页码的数据即可。本例中利用的是antd的Table组件中的**页码监听**功能来实现动态的数据请求，每次的页码的改变都会重新调用请求函数，并将新的请求页码作为参数传入，从而实现能够动态展示需要展示的页码。
+
+`````js
+<Table
+       pagination={{
+             onChange: (pageNum) => this.getProducts(pageNum)
+       }}
+ />
+`````
+
+`````js
+    getProducts = async (pageNum) => {
+        this.pageNum = pageNum; //保存pageNum，让其他人看到
+        const { searchType, searchInput } = this.state;
+        this.setState({ loading: true })  //显示loading
+        let result;  //定义结果变量
+        if (searchInput) {  //如果有关键词，采用搜索分页
+            result = await reqSearchProducts(pageNum, PAGE_SIZE, searchType, searchInput)
+        } else {   //如果没有关键词，采用一般分页
+            result = await reqProducts(pageNum, PAGE_SIZE)
+        }
+        this.setState({ loading: false })  //隐藏loading
+        if (result.status === 0) {
+            const { total, list } = result.data;
+            this.setState({
+                total,
+                products: list
+            })
+        }
+    }
+`````
+
+> 分页显示
+>    接口请求函数需要的数据：pageNum，pageSize
+>        异步获取第一页的数据的显示
+>        调用分页接口请求函数，获取到当前页的product和总记录数total
+>         更新状态：produts / total
+>     翻页：
+>         绑定翻页的监听，监听回调需要得到pageNum
+>         异步获取指定页码的数据显示
+
+#### 商品的搜索
+
+商品的搜索就是按照不同条件来渲染不同的页面，当然这些关键词的提炼都是由后台完成，我们要做的就是**收集由用户输入的关键词**并向后台发送含有这些关键词的请求信息，接口请求如下：
+
+`````js
+//获取搜索商品的分页列表
+export const reqSearchProducts = (pageNum , pageSize , searchType , productInput) => ajax( BASE_URL + '/manage/product/search',{
+  pageNum ,
+  pageSize,
+  [searchType] : productInput  
+})//searchType是一个变量，因为有两种可能,axios.get的对象传参
+`````
+
+这里需要注意的是，**searchType的[]写法**，通常我们在对象的属性值可以使用任意的变量或是字符创，无需特殊声明，而属性需要使用[]包裹的方式来体现出我们的属性是一个**变量**。普通的写法 key : value，或是'key' : value，都会被JavaScript解析为后者字符串的形式。
+
+这里的搜索方式和搜索的关键词通过我们用户选择和输入来传递给后台，相关代码已经在上面显示。我们根据有没有关键词的输入来体现出需不需要搜索展示。我们通过状态来获取searchType和searchInput，根据antd不同的获取value值的方法将得到关键词放在状态中。之后通过点击事件重新获取分页搜索的第一页。
+
+`````jsx
+<Select value={searchType} style={{ width: 150 }} onChange={value => this.setState({ searchType: value })}>
+                    <Option value='productName'>按名称搜索</Option>
+                    <Option value='productDesc'>按描述搜索</Option>
+                </Select>
+                <Input placeholder='关键字' style={{ width: 150, margin: '0 15px' }} onChange={e => this.setState({ searchInput: e.target.value })} />
+                <Button type='primary' onClick={() => this.getProducts(1)} >搜索</Button>
+`````
+
+> 搜索分页
+>
+>  接口函数所需要的数据
+>
+> ​    pageSize, pageNum , productType等
+>
+>   异步更新搜索显示分页
+>
+> ​    如果searchName有值，调用搜索函数的函数获取数据并更新状态
+
+#### 商品的状态管理
+
+商品的状态管理就是显示商品的在售和下架状态，并且可以手动的来控制这个状态。这里补充一下antd的Table组件中**columns属性**的配置。
+
+````jsx
+        const columns = [
+            {
+                title: '价格',
+                width: 150,
+                dataIndex: 'price',
+                render: (price) => '￥' + price  //当前dataindex指定了对应的属性，传入对应的属性值；不指定就会是当前对象
+            },
+            {
+                title: '状态',
+                width: 150,
+                // dataIndex: 'status',
+                render: (product) => {
+                    const { status, _id } = product
+                    return (
+                        <span>
+                            <Button
+                                type='primary'
+                                onClick={() => this.updateStatus(_id, status === 1 ? 2 : 1)}
+                            >
+                                {status === 1 ? '下架' : '上架'}
+                            </Button>
+                            <span> {status === 1 ? '在售' : '已下架'} </span>
+                        </span>
+                    )
+                }
+            },
+        ];
+````
+
+关于在配置中，观察上面两个示例，如果指定了数据来源（第一个对象），即**指定了dataIndex**，再对其使用render，此时的回调函数支持传入的参数就是这**数据来源**。如果没有指定数据来源，即**没有指定dateInde**，此时render的回调函数所支持的回调函数就是**当前的传入对象**，你可以获取这个来自这个对象的全部信息。其中就包括商品信息的状态值和id值，更改后向后台发送更改的请求数据。这里可以观察一下**三目运算符**的写法。
+
+````jsx
+const result = await reqUpdateStatus(_id, newStatus);
+````
+
+#### 商品的详情
+
+商品的详情就是分类展示信息功能实现，这里补充四个知识点。
+
+``````jsx
+{
+                title: '操作',
+                render: (product) => {
+                    return (
+                        <span>
+                            <button style={{ outline: 'none', border: 'none', cursor: 'pointer', background: 'transparent', color: '#1890ff' }} onClick={() => this.props.history.push('/product/detail', product)} >详情</button>  {/*push方法的第二个参数，可以将product通过location传到目标组件 */}
+                            <br></br>
+                            <button style={{ outline: 'none', border: 'none', cursor: 'pointer', background: 'transparent', color: '#1890ff' }} onClick={() => this.props.history.push('/product/addupdate', product)}>修改</button>
+                        </span>
+                    )
+                }
+            },
+``````
+
+- **编程式路由的push方法的第二个参数**
+
+  `````jsx
+  this.props.history.push('/product/detail', product)
+  `````
+
+  可以传递两个参数，第一个是路径，第二个则是附带向目标路由传递的信息，这里传递的是这个点击事件选中商品的render中的product。目标路由中通过location中的state接收。
+
+  ````jsx
+  this.props.location.state
+  ````
+
+- **父子组件中互相调用方法**
+
+   1、子组件调用父组件的方法：将父组件的方法以函数属性的形式传递给子组件，子组件就可以调用
+
+   2、父组件调用子组件的方法：在父组件中通过ref得到子组件标签对象（也就是说组件对象），调用其方法。
+
+- 安全的插入来自服务器带有标签的数据，如：\<p>...\</p>
+
+  ````jsx
+  <span dangerouslySetInnerHTML={{ __html: detail }}></span>  {/*插入HTML代码 */}
+  ````
+
+  在react中，通过富文本编辑器进行操作后的内容，会保留原有的标签样式，并不能正确展示。用上面的代码可以正确显示。
+
+  不合时宜的使用 innerHTML 可能会导致 cross-site scripting (XSS) 攻击。 净化用户的输入来显示的时候，经常会出现错误，不合适的净化也是导致网页攻击的原因之一。dangerouslySetInnerHTML 这个 prop 的命名是故意这么设计的，以此来警告，它的 prop 值（ 一个对象而不是字符串 ）应该被用来表明净化后的数据。
+
+- Promise.all([promise1,promise2])的使用
+
+#### 商品的添加
+
+商品的添加和修改共用一个页面，区别是在于是否获取此次选中的商品的信息。商品的信息的获取也是从push方法中获得
+
+````js
+const product = this.props.location.state   //获取
+````
+
+关键代码
+
+`````js
+this.isUpdate = !!product;   //将product强行的转化为布尔值，借此来表示是否要更新或是添加
+this.product = product || {};  //储存商品信息，或者{}是为了防止报错，同时如果是添加也就啥也不显示了
+`````
+
+通过由push传过来的单个商品信息和{}空集取或，意为如果product里面有值取product，若是undefined取{}空集。后经判断是添加或是修改来确定显示。
+
+添加的时候，表单获取所有的输入值，取得关键信息提交给后台发送添加请求。当然在此之前会有一个表单验证的功能，这里借用的是Form组件自带的rules属性判断即可。
+
+#### 商品的修改
+
+原理上文已解释清楚，不再赘述。
+
+## 角色管理
+
+## 用户管理
+
+## 图形图表的显示
+
+
+
+
 
 
 
