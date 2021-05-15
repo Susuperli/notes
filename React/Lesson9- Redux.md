@@ -3,12 +3,12 @@
 ## 简介
 
 随 JavaScript单页应用开发日趋复杂, JavaScrpt需要管理比任何时候都要多的 state(状态)这些 state可能包括服务器响应、缓存数据本地生成尚未持久化到服务器的数据,也包括U状态,如激活的路由,被选中的标签,是否显示加载动效或者分页器等等
-管理不断变化的 state非常困难,尤其是很深层次的组件嵌套,造成 state需要需要互相传递,如果一个 model的变化会引起另一个 model变化,那么当vew变化时,就可能引起对应 model以及另一个 model的变化,依次地,可能会引起另个view的变化,直至你搞不清楚到底发生了什么, state在什么时候,由于什么原因,如何变化已然不受控制,当系统变得错综复杂的时候,想重现问题或者添加新功能就会变得举步维艰。
+管理不断变化的 state非常困难,尤其是很深层次的组件嵌套,造成 state需要需要互相传递,如果一个 model的变化会引起另一个 model变化,那么当view变化时,就可能引起对应 model以及另一个 model的变化,依次地,可能会引起另个view的变化,直至你搞不清楚到底发生了什么, state在什么时候,由于什么原因,如何变化已然不受控制,当系统变得错综复杂的时候,想重现问题或者添加新功能就会变得举步维艰。
 
 ### redux是什么
 
 - 他是一个专门用于做**状态管理**的js库（不是react的插件库）。
-- 他可以在拥有react，angulat，vue等项目中，但基本与react配合使用。
+- 他可以在拥有react，angular，vue等项目中，但基本与react配合使用。
 - **作用：集中式管理react应用中多个组件共享状态。**
 
 ### 什么时候用
@@ -39,7 +39,7 @@
 
 **为了描述action如何改变state tree，你需要编写reducers**
 
-Reducer只是一些纯函数，他接受先前的state和action，并返回新的state，刚开始你可以只有一个reducer，随着应用的变大，你可以把它拆成多个小的reducer，分别独立地操作state tree的不同部分，因为reducer只是函数，你可以控制他们被条用的顺序，传入附加数据，甚至可以编写可复用的reducer来处理一些通用任务，如分页器。
+Reducer只是一些纯函数，他接受**先前的state**和action，并**返回新的state**，刚开始你可以只有一个reducer，随着应用的变大，你可以把它拆成多个小的reducer，分别独立地操作state tree的不同部分，因为reducer只是函数，你可以控制他们被调用的顺序，传入附加数据，甚至可以编写可复用的reducer来处理一些通用任务，如分页器。
 
 ## 函数说明
 
@@ -76,7 +76,7 @@ Recuder函数最重要的特征是，他是一个纯函数。也就是说，只�
 
 Recuder指定了应用状态的变化如何响应action并发送到store的，记住actions只是描述了有事情发生了这一个事实，并没有描述应用如何更新state。
 
-reducer是哟个函数，他接受action和当前的state作为参数，返回一个新的state。
+reducer是一个纯函数，他接受action和当前的state作为参数，返回一个新的state。
 
 ````React
 var initdata=['乐器'];
@@ -332,5 +332,11 @@ function mapStateToProps(state)(//函数返回对象中的key就作为传递给U
 
 ````
 
+#### **React如何响应store变化**
 
+文章一开始我们也提到React其实跟Redux没有直接联系，也就是说，Redux中dispatch触发store tree中state变化，并不会导致React重新渲染。
+react-redux才是真正触发React重新渲染的模块，那么这一过程是怎样实现的呢？
+刚刚提到，connect模块返回一个wrapWithConnect函数，wrapWithConnect函数中又返回了一个Connect组件。Connect组件的功能有以下两点：
+1、包装原组件，将state和action通过props的方式传入到原组件内部
+2、监听store tree变化，使其包装的原组件可以响应state变化
 

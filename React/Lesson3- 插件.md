@@ -19,6 +19,10 @@ const Vdom=<h1 id="test">hello</h1> //使用小括号作为整体可以换行书
 
 #### react原生方式
 
+`````jsx
+React.createElement('tag','props','children')
+`````
+
 ### JSX语法
 
 - 全称：JavaScript XML
@@ -36,5 +40,5 @@ const Vdom=<h1 id="test">hello</h1> //使用小括号作为整体可以换行书
 - 标签首字母
   - 若小写字母开头，则将会把标签转换为html同名标签，若无标签对应的元素，则报错。
   - 若大写开头，react将其识别为组件，就去渲染组件，若没有该组件，则报错。
-- jsx允许在模板中插入数组，数组会自动展开所有成员。
+- **jsx允许在模板中插入数组，数组会自动展开所有成员**。
 

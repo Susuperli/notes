@@ -119,11 +119,11 @@ getDerivedStateFromProps(pros,state)
 
 #### render
 
-#### shouldComponentUpdata(props,state)
+#### shouldComponentUpdate(props,state)
 
 #### render
 
-#### getSnapshotBeforeUpdata(prevProps,prevState)
+#### getSnapshotBeforeUpdate(prevProps,prevState)
 
 触犯时间：updata发生的时候，在render之后，在组件dom渲染之前；返回一个值，作为componentDidUpdata的带三个参数；配合componentDidUpdata，可以覆盖componentWillUpdata所有用法。
 
@@ -133,13 +133,13 @@ getDerivedStateFromProps(pros,state)
 
 #### getDerivedStateFromProps
 
-#### shouldComponentUpdata
+#### shouldComponentUpdate
 
 #### render
 
-#### getSnapBeforeUpdata(prevProps,prevState)
+#### getSnapShotBeforeUpdate(prevProps,prevState)
 
-#### componentDidUpdata()
+#### componentDidUpdate()
 
 ### 卸载期
 
@@ -149,7 +149,7 @@ getDerivedStateFromProps(pros,state)
 
 ## 变更原因
 
-- 原来的生命周期的生命周期在React v16提出的Fiber之后就不合适了，因为如果要开启async rendering，在render函数之前的所有函数，都有可能被渲染多次。
+- 原来的生命周期的生命周期在React v16提出的Fiber之后就不合适了，因为如果要开启async rendering，在render函数之前的所有函数，都有可能被渲染多次。关于fiber：[React Fiber是什么 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/26027085)
 - 如果开发者开了async rendering，而且有在以上这些render前执行的生命周期方法做AJAx请求的话，那ajax将被调用多次，而且在componentWillMount里发起ajax，不管多快得到结果也赶不上首次render，而且componentWillMount在服务器端渲染也会被调用到，所了除了shouldComponentUpdata，其他在render函数之前的所有函数（componentWillMount，componentWillReceiveProps，componentWillUpdata）都被getDerivedStataFromProps代替，也就是用一个静态函数getDerivedStateFromProps来代替被取代的几个生命周期函数，就是强制开发者在render之前只做无副作用的操作，而且能做的操作局限根据props和state决定新的state。
 
 ## 新旧周期的比较
